@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -13,13 +12,23 @@ namespace MedicHelpper
     {
         Validaciones validar = new Validaciones();
         ClassEnfermero enfer = new ClassEnfermero();
+        int especialidadDoc = 0;
         bool CampoCodCita, CampoTarjCita, NombreAdd, ApellidoAdd,CodUsuario, CodUsuarioDoc, FechaCita= true, Descripcion;
 
         public frmDoctor()
         {
             InitializeComponent();
         }
-
+        public frmDoctor(int cod,int tipoDoc)
+        {
+            InitializeComponent();
+            if (cod == 1)
+            {
+                pctAtras.Enabled = false;
+                pctAtras.Visible = false;
+            }
+            especialidadDoc = tipoDoc;
+        }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -208,6 +217,8 @@ namespace MedicHelpper
             errorCita.SetError(txt_cita, "");
             ApellidoAdd = ValidarCampoLetras(txt_cita, e, errorCita);
         }
+
+
         private void txt_ConsultaDoc_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorCodUSuario.SetError(txt_codusuario, "");
@@ -225,8 +236,16 @@ namespace MedicHelpper
         {
             string sql = "Insert into Consulta (IdUsuarioConsulta,idCita,Descripcion,CodReceta,Fecha) values ('" + txt_codusuario.Text+ "','" +txt_codigocita.Text+ "','" +txt_DescripcionDoc.Text+ "','"+ txt_RecetDoc.Text + "','" + txt_fecha_doc.Text+ "')";
             
-            if (ObDatos.AgregarCita(sql)) { MessageBox.Show("Datos insertados correctamente"); }
+            if (ObDatos.AgregarCita(sql)) { 
+                MessageBox.Show("Datos insertados correctamente");
+                //string eliminado = "delete from Cita where idCita " + txt_codigocita;
+                
+            }
             else { MessageBox.Show("Hubo un problema con la insersion de datos"); }
+
+            
+            ////  FALTA HACER QUE BORRE DE LA BASE DE DATOS LAS CITAS YA ATENDIDAS
+            ///
         }
 
         ClassDoctor ObDatos = new ClassDoctor();
@@ -240,8 +259,15 @@ namespace MedicHelpper
         }
         private void btn_MostrarData_Click(object sender, EventArgs e)
         {
-            ObDatos.BuscarCita("Select * from Consulta", "Consulta");
-            this.dataGridView1.DataSource = ObDatos.ds.Tables["Consulta"];
+            if (especialidadDoc!=-1)
+            {
+                ObDatos.AtenderPaciente(especialidadDoc, dataGridView1);
+            }
+            else
+            {
+                ObDatos.BuscarCita("Select * from Cita ", "Consulta");
+                this.dataGridView1.DataSource = ObDatos.ds.Tables["Consulta"];
+            }
             
         }
         private void btnAddCita_Click(object sender, EventArgs e)
@@ -250,7 +276,7 @@ namespace MedicHelpper
             if (validar.ValidarCamposVacios(txtTarjeta, errorCodigoTarjeta)
                    && FechaCita)
             {
-                enfer.AgregarCita(dtpCita, txtTarjeta.Text, label8, txtCita);
+                enfer.AgregarCita(dtpCita, txtTarjeta.Text, label8, txtCita,cbEspecilidadCita);
                 errorFecha.SetError(dtpCita, "");
             }
             else

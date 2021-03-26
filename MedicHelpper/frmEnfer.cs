@@ -13,12 +13,22 @@ namespace MedicHelpper
     {
         //Declaracion de variables globales necesarias
         Validaciones validar = new Validaciones();
-        bool CampoCodCita, CampoTarjCita, FechaCita=true, NombreAdd, ApellidoAdd,FechaNacimiento = true,AddTarjeta;
+        bool CampoCodCita, CampoTarjCita, txTarjetaCita, FechaCita=true, NombreAdd, ApellidoAdd,FechaNacimiento = true,AddTarjeta;
         ClassEnfermero enfermer = new ClassEnfermero();
         public frmEnfer()
         {
             InitializeComponent();
             tipAgregar.SetToolTip(txtnum, "Ingrese el numero de tarjeta del paciente con el sigiente formato: P00001");            
+        }
+        public frmEnfer(int cod)
+        {
+            if (cod == 1)
+            {
+                InitializeComponent();
+                tipAgregar.SetToolTip(txtnum, "Ingrese el numero de tarjeta del paciente con el sigiente formato: P00001");
+                pctAtras.Visible = false;
+                pctAtras.Enabled = false;
+            }
         }
         //Procedimiento para minimizar la pantalla
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -63,6 +73,7 @@ namespace MedicHelpper
             errorNTarjetaFind.SetError(NTarjeta, "");
             errorFechaNacimiento.SetError(dtFechadeNacimiento, "");
             errorNtarjetaPaciente.SetError(txtnum, "");
+            errorInsEmergencia.SetError(txtTarjEmergencia, "");
         }
         //Procesos para cuando se precionen teclas no debidas en los textbox los error provider se activen
         private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -97,6 +108,34 @@ namespace MedicHelpper
 
         }
 
+        private void btnAddEmergencia_Click(object sender, EventArgs e)
+        {
+            BorrarValidar();
+            if (validar.ValidarCamposVacios(txtTarjEmergencia, errorInsEmergencia)
+                   && FechaCita)
+            {
+                enfermer.AgregarEmergencia(txtTarjEmergencia.Text, cbEspecialidadEmergencia,cbPrioridad);
+                
+            }
+            else
+            {
+               if (!CampoTarjCita)
+                {
+                    errorInsEmergencia.SetError(txtTarjEmergencia, "Campo con datos no validos,\n Vuelva a intentar ingresar");
+                }
+                else
+                {
+                    errorInsEmergencia.SetError(txtTarjEmergencia, "Campos con datos vacios");
+                }
+            }
+        }
+
+        private void txtTarjEmergencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            errorInsEmergencia.SetError(txtTarjEmergencia, "");
+            txTarjetaCita = validar.ValidarCamposVacios(txtTarjEmergencia, errorInsEmergencia);
+        }
+
         private void dtFechadeNacimiento_ValueChanged(object sender, EventArgs e)
         {
             errorFechaNacimiento.SetError(dtFechadeNacimiento, "");
@@ -118,7 +157,7 @@ namespace MedicHelpper
             if (validar.ValidarCamposVacios(txtTarjeta,errorCodigoTarjeta)
                    && FechaCita)
             {                
-                enfermer.AgregarCita(dtpCita, txtTarjeta.Text, label8, txtCita);                
+                enfermer.AgregarCita(dtpCita, txtTarjeta.Text, label8, txtCita,cbEspecilidadCita);                
                 errorFecha.SetError(dtpCita, "");
             }
             else
@@ -197,7 +236,7 @@ namespace MedicHelpper
                 }
                 else if (!AddTarjeta)
                 {
-                    errorNtarjetaPaciente.SetError(txtnum, "El campo no puede estar vacío");
+                    errorNtarjetaPaciente.SetError(txtnum, "El campo debe ser de la forma P00001");
                 }
                 else
                 {

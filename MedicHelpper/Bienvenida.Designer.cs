@@ -108,9 +108,9 @@
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label4.Size = new System.Drawing.Size(305, 36);
+            this.label4.Size = new System.Drawing.Size(307, 18);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Programación Orientada a Objetos\r\nModelación y Diseño de Base de Datos";
+            this.label4.Text = "Programación con estructuras de datos";
             // 
             // label5
             // 
@@ -134,8 +134,8 @@
             this.label6.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label6.Size = new System.Drawing.Size(271, 90);
             this.label6.TabIndex = 7;
-            this.label6.Text = "Jesús Alexander Díaz Merino\r\nJeffrey Xavier Portillo Saravia\r\nMarcos de Jesús Her" +
-    "nandéz Sorto\r\nDaniel Santos Miranda Lopez\r\nWilliam Ernesto Rodriguez Reyes";
+            this.label6.Text = "Emmanuel Antonio Girón Cornejo\r\nJeffrey Xavier Portillo Saravia\r\nMarcos de Jesús " +
+    "Hernandéz Sorto\r\nDaniel Santos Miranda Lopez\r\nWilliam Ernesto Rodriguez Reyes";
             // 
             // label7
             // 
@@ -159,7 +159,7 @@
             this.label8.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.label8.Size = new System.Drawing.Size(92, 18);
             this.label8.TabIndex = 9;
-            this.label8.Text = "09-07-2020";
+            this.label8.Text = "05-03-2021";
             // 
             // label9
             // 

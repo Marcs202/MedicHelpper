@@ -86,9 +86,9 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label8.Location = new System.Drawing.Point(526, 246);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 18);
+            this.label8.Size = new System.Drawing.Size(74, 18);
             this.label8.TabIndex = 6;
-            this.label8.Text = "09-07-2020";
+            this.label8.Text = "5-03-2021";
             // 
             // label7
             // 
@@ -132,8 +132,8 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(240, 90);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Jesús Alexander Díaz Merino\r\nJeffrey Xavier Portillo Saravia\r\nMarcos de Jesús Her" +
-    "nandéz Sorto\r\nDaniel Santos Miranda Lopez\r\nWilliam Ernesto Rodriguez Reyes";
+            this.label4.Text = "Emmanuel Antonio Girón Cornejo\r\nJeffrey Xavier Portillo Saravia\r\nMarcos de Jesús " +
+    "Hernandéz Sorto\r\nDaniel Santos Miranda Lopez\r\nWilliam Ernesto Rodriguez Reyes";
             // 
             // label3
             // 

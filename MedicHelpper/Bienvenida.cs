@@ -25,5 +25,6 @@ namespace MedicHelpper
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
+
     }
 }

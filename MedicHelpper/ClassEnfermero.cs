@@ -75,7 +75,52 @@ namespace MedicHelpper
                 conexion.Close();
             }
         }
-        public void AgregarCita(DateTimePicker fechaCita, string nTarjeta, Label lbl, TextBox txt)
+        public void AgregarEmergencia(string nTarjeta,ComboBox especialidad, ComboBox priorid)
+        {
+            try
+            {
+                conexion.Open();
+                int estado = 1;
+                int dia = DateTime.Today.Day;
+                int esp = especialidad.SelectedIndex + 1;
+                string fecha = DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + " " + DateTime.Today.Hour.ToString() + ":" + DateTime.Today.Minute.ToString();
+                string insertar;
+                insertar = "INSERT INTO Cita (IdPacienteCita,FechaCita,Estado,Especialidad,Prioridad)";
+                insertar += "VALUES (@idPaciente,@fecha,@estado,@especialidad,@prioridad)";
+                comando = new SqlCommand(insertar, conexion);
+                comando.Parameters.Add(new SqlParameter("@idPaciente", SqlDbType.Char, 6));
+                comando.Parameters["@idPaciente"].Value = nTarjeta;
+                comando.Parameters.Add(new SqlParameter("@fecha", SqlDbType.DateTime));
+                comando.Parameters["@fecha"].Value = fecha;
+                comando.Parameters.Add(new SqlParameter("@estado", SqlDbType.Int));
+                comando.Parameters["@estado"].Value = estado;
+                comando.Parameters.Add(new SqlParameter("@especialidad", SqlDbType.Int));
+                comando.Parameters["@especialidad"].Value = esp;
+                comando.Parameters.Add(new SqlParameter("@prioridad", SqlDbType.Int));
+                comando.Parameters["@prioridad"].Value = priorid.SelectedIndex+1;
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                MessageBox.Show("Cita añadida al sistema exitosamente", "Insercion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+            }
+            catch (Exception ex)
+            {
+                if (ex.ToString() == "Duplicate Data")
+                {
+                    MessageBox.Show("Cita no ingresado,este paciente ya tiene una cita para el mismo momento ", "Reintentar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Cita no ingresada,Vuelva a intentar ingresar con los formatos correctos"+ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+            finally
+            {
+                conexion.Close();
+            }
+        }
+        public void AgregarCita(DateTimePicker fechaCita, string nTarjeta, Label lbl, TextBox txt,ComboBox cb)
         {
             try
             {
@@ -86,10 +131,11 @@ namespace MedicHelpper
                 int dia = fechaCita.Value.Day;
                 int Hora = fechaCita.Value.Hour;
                 int Minuto = fechaCita.Value.Minute;
+                int esp = cb.SelectedIndex+1;
                 string fecha = dia.ToString() + "-" + mes.ToString() + "-" + año.ToString() + " " + Hora.ToString()+":"+Minuto.ToString();
                 string insertar;
-                insertar = "INSERT INTO Cita (IdPacienteCita,FechaCita,Estado)";
-                insertar+="VALUES (@idPaciente,@fecha,@estado)";
+                insertar = "INSERT INTO Cita (IdPacienteCita,FechaCita,Estado,Especialidad,Prioridad)";
+                insertar+="VALUES (@idPaciente,@fecha,@estado,@especialidad,@prioridad)";
                 comando = new SqlCommand(insertar, conexion);
                 comando.Parameters.Add(new SqlParameter("@idPaciente", SqlDbType.Char, 6));
                 comando.Parameters["@idPaciente"].Value = nTarjeta;
@@ -97,6 +143,10 @@ namespace MedicHelpper
                 comando.Parameters["@fecha"].Value = fecha;
                 comando.Parameters.Add(new SqlParameter("@estado", SqlDbType.Int));
                 comando.Parameters["@estado"].Value = estado;
+                comando.Parameters.Add(new SqlParameter("@especialidad", SqlDbType.Int));
+                comando.Parameters["@especialidad"].Value = esp;
+                comando.Parameters.Add(new SqlParameter("@prioridad", SqlDbType.Int));
+                comando.Parameters["@prioridad"].Value = 3;
                 comando.ExecuteNonQuery();
                 conexion.Close();
                 MessageBox.Show("Cita añadida al sistema exitosamente", "Insercion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,7 +160,7 @@ namespace MedicHelpper
                 }
                 else
                 {
-                    MessageBox.Show("Cita no ingresada,Vuelva a intentar ingresar con los formatos correctos"+ex , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Cita no ingresada,Vuelva a intentar ingresar con los formatos correctos" , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
             }

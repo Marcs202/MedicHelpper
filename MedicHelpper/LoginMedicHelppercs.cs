@@ -65,13 +65,13 @@ namespace MedicHelpper
                 txbContraseña.UseSystemPasswordChar = false;
             }
         }
-
         private void btnlimpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
         public void iniciarSesion(string usuario, string contraseña)
         {
+            int tipodoc = 0;
             try
             {
                 conectarbdd.abrir();
@@ -88,23 +88,26 @@ namespace MedicHelpper
                     {
                         this.Hide();
                         string nombre = (dt.Rows[0][2] + " " + dt.Rows[0][3]);
+                        
                         MenuAdministrador menu = new MenuAdministrador(nombre);
                         menu.Show();
                     }else if (dt.Rows[0][6].ToString() == "1")
                     {
                         this.Hide();
-                        frmEnfer frmEnfer = new frmEnfer();
+                        frmEnfer frmEnfer = new frmEnfer(1);
                         frmEnfer.Show();
                     }else if (dt.Rows[0][6].ToString() == "2")
                     {
                         this.Hide();
-                        frmDoctor frmDoctor = new frmDoctor();
-                        frmDoctor.Show();
+                        tipodoc = int.Parse(dt.Rows[0][7].ToString());
+                        frmDoctor frmDooctor = new frmDoctor(1,tipodoc);
+                        frmDooctor.Show();
+                        
                     }
                     else if (dt.Rows[0][6].ToString() == "3")
                     {
                         this.Hide();
-                        Farmaceuticos farma = new Farmaceuticos();
+                        Farmaceuticos farma = new Farmaceuticos(1);
                         farma.Show();
                     }
                 }

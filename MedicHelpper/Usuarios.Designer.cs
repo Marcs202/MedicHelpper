@@ -42,6 +42,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grbregistrar = new System.Windows.Forms.GroupBox();
+            this.cbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.lblEspecialiad = new System.Windows.Forms.Label();
             this.txbcontraseñareg = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txbapellidousurioreg = new System.Windows.Forms.TextBox();
@@ -85,6 +87,8 @@
             this.label21 = new System.Windows.Forms.Label();
             this.btnbuscarEnMostrar = new System.Windows.Forms.Button();
             this.dtgvmostrarusuarios = new System.Windows.Forms.DataGridView();
+            this.lbltipoDoc = new System.Windows.Forms.Label();
+            this.cbEditTipoDoc = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctAtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
@@ -255,6 +259,8 @@
             // grbregistrar
             // 
             this.grbregistrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grbregistrar.Controls.Add(this.cbEspecialidad);
+            this.grbregistrar.Controls.Add(this.lblEspecialiad);
             this.grbregistrar.Controls.Add(this.txbcontraseñareg);
             this.grbregistrar.Controls.Add(this.label3);
             this.grbregistrar.Controls.Add(this.txbapellidousurioreg);
@@ -269,26 +275,56 @@
             this.grbregistrar.Controls.Add(this.btningresarusuario);
             this.grbregistrar.Controls.Add(this.label8);
             this.grbregistrar.Controls.Add(this.label10);
-            this.grbregistrar.Location = new System.Drawing.Point(127, 8);
+            this.grbregistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.grbregistrar.Location = new System.Drawing.Point(28, 6);
             this.grbregistrar.Name = "grbregistrar";
-            this.grbregistrar.Size = new System.Drawing.Size(546, 329);
+            this.grbregistrar.Size = new System.Drawing.Size(722, 329);
             this.grbregistrar.TabIndex = 0;
             this.grbregistrar.TabStop = false;
             this.grbregistrar.Text = "Registrar usuario";
             // 
+            // cbEspecialidad
+            // 
+            this.cbEspecialidad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEspecialidad.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbEspecialidad.FormattingEnabled = true;
+            this.cbEspecialidad.Items.AddRange(new object[] {
+            "General",
+            "Pediatría",
+            "Neumología",
+            "Gastroenterología"});
+            this.cbEspecialidad.Location = new System.Drawing.Point(205, 241);
+            this.cbEspecialidad.Name = "cbEspecialidad";
+            this.cbEspecialidad.Size = new System.Drawing.Size(196, 23);
+            this.cbEspecialidad.TabIndex = 24;
+            this.cbEspecialidad.Visible = false;
+            // 
+            // lblEspecialiad
+            // 
+            this.lblEspecialiad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblEspecialiad.AutoSize = true;
+            this.lblEspecialiad.Location = new System.Drawing.Point(99, 241);
+            this.lblEspecialiad.Name = "lblEspecialiad";
+            this.lblEspecialiad.Size = new System.Drawing.Size(105, 15);
+            this.lblEspecialiad.TabIndex = 23;
+            this.lblEspecialiad.Text = "Especialidad: ";
+            this.lblEspecialiad.Visible = false;
+            // 
             // txbcontraseñareg
             // 
             this.txbcontraseñareg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbcontraseñareg.Location = new System.Drawing.Point(200, 203);
+            this.txbcontraseñareg.Location = new System.Drawing.Point(205, 204);
             this.txbcontraseñareg.Name = "txbcontraseñareg";
             this.txbcontraseñareg.Size = new System.Drawing.Size(266, 23);
             this.txbcontraseñareg.TabIndex = 22;
+            this.txbcontraseñareg.TextChanged += new System.EventHandler(this.txbcontraseñareg_TextChanged);
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(110, 206);
+            this.label3.Location = new System.Drawing.Point(115, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 15);
             this.label3.TabIndex = 21;
@@ -297,7 +333,7 @@
             // txbapellidousurioreg
             // 
             this.txbapellidousurioreg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbapellidousurioreg.Location = new System.Drawing.Point(200, 87);
+            this.txbapellidousurioreg.Location = new System.Drawing.Point(205, 88);
             this.txbapellidousurioreg.Name = "txbapellidousurioreg";
             this.txbapellidousurioreg.Size = new System.Drawing.Size(266, 23);
             this.txbapellidousurioreg.TabIndex = 20;
@@ -306,7 +342,7 @@
             // txbnombreusuarioreg
             // 
             this.txbnombreusuarioreg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbnombreusuarioreg.Location = new System.Drawing.Point(200, 58);
+            this.txbnombreusuarioreg.Location = new System.Drawing.Point(205, 59);
             this.txbnombreusuarioreg.Name = "txbnombreusuarioreg";
             this.txbnombreusuarioreg.Size = new System.Drawing.Size(266, 23);
             this.txbnombreusuarioreg.TabIndex = 19;
@@ -315,8 +351,10 @@
             // cmbtipousuarioreg
             // 
             this.cmbtipousuarioreg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbtipousuarioreg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbtipousuarioreg.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbtipousuarioreg.FormattingEnabled = true;
-            this.cmbtipousuarioreg.Location = new System.Drawing.Point(200, 174);
+            this.cmbtipousuarioreg.Location = new System.Drawing.Point(205, 175);
             this.cmbtipousuarioreg.Name = "cmbtipousuarioreg";
             this.cmbtipousuarioreg.Size = new System.Drawing.Size(266, 23);
             this.cmbtipousuarioreg.TabIndex = 18;
@@ -325,7 +363,7 @@
             // txbduiusuarioreg
             // 
             this.txbduiusuarioreg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txbduiusuarioreg.Location = new System.Drawing.Point(200, 145);
+            this.txbduiusuarioreg.Location = new System.Drawing.Point(205, 146);
             this.txbduiusuarioreg.Name = "txbduiusuarioreg";
             this.txbduiusuarioreg.Size = new System.Drawing.Size(266, 23);
             this.txbduiusuarioreg.TabIndex = 17;
@@ -334,7 +372,7 @@
             // dtpfechanacreg
             // 
             this.dtpfechanacreg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpfechanacreg.Location = new System.Drawing.Point(200, 116);
+            this.dtpfechanacreg.Location = new System.Drawing.Point(205, 117);
             this.dtpfechanacreg.Name = "dtpfechanacreg";
             this.dtpfechanacreg.Size = new System.Drawing.Size(266, 23);
             this.dtpfechanacreg.TabIndex = 16;
@@ -343,7 +381,7 @@
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(75, 177);
+            this.label14.Location = new System.Drawing.Point(80, 178);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(119, 15);
             this.label14.TabIndex = 10;
@@ -353,7 +391,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(82, 61);
+            this.label4.Location = new System.Drawing.Point(87, 62);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(112, 15);
             this.label4.TabIndex = 14;
@@ -365,11 +403,11 @@
             this.btnlimpiarusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
             this.btnlimpiarusuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlimpiarusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.btnlimpiarusuario.Location = new System.Drawing.Point(299, 282);
+            this.btnlimpiarusuario.Location = new System.Drawing.Point(549, 277);
             this.btnlimpiarusuario.Name = "btnlimpiarusuario";
-            this.btnlimpiarusuario.Size = new System.Drawing.Size(75, 29);
+            this.btnlimpiarusuario.Size = new System.Drawing.Size(112, 29);
             this.btnlimpiarusuario.TabIndex = 1;
-            this.btnlimpiarusuario.Text = "Limpiar";
+            this.btnlimpiarusuario.Text = "Vacíar campos";
             this.btnlimpiarusuario.UseVisualStyleBackColor = false;
             this.btnlimpiarusuario.Click += new System.EventHandler(this.btnlimpiarusuario_Click);
             // 
@@ -377,7 +415,7 @@
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(103, 148);
+            this.label12.Location = new System.Drawing.Point(108, 149);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(91, 15);
             this.label12.TabIndex = 8;
@@ -389,7 +427,7 @@
             this.btningresarusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
             this.btningresarusuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btningresarusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.btningresarusuario.Location = new System.Drawing.Point(218, 282);
+            this.btningresarusuario.Location = new System.Drawing.Point(468, 277);
             this.btningresarusuario.Name = "btningresarusuario";
             this.btningresarusuario.Size = new System.Drawing.Size(75, 29);
             this.btningresarusuario.TabIndex = 0;
@@ -401,7 +439,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(68, 90);
+            this.label8.Location = new System.Drawing.Point(73, 91);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(126, 15);
             this.label8.TabIndex = 4;
@@ -411,7 +449,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 122);
+            this.label10.Location = new System.Drawing.Point(17, 123);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(182, 15);
             this.label10.TabIndex = 6;
@@ -442,6 +480,7 @@
             this.dtgvbusquedaresultados.ReadOnly = true;
             this.dtgvbusquedaresultados.RowHeadersVisible = false;
             this.dtgvbusquedaresultados.RowHeadersWidth = 51;
+            this.dtgvbusquedaresultados.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dtgvbusquedaresultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvbusquedaresultados.Size = new System.Drawing.Size(358, 275);
             this.dtgvbusquedaresultados.TabIndex = 32;
@@ -484,6 +523,8 @@
             // grbmodificarusuarios
             // 
             this.grbmodificarusuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grbmodificarusuarios.Controls.Add(this.cbEditTipoDoc);
+            this.grbmodificarusuarios.Controls.Add(this.lbltipoDoc);
             this.grbmodificarusuarios.Controls.Add(this.txbcontraseñabuscar);
             this.grbmodificarusuarios.Controls.Add(this.label5);
             this.grbmodificarusuarios.Controls.Add(this.txbbuscarid);
@@ -617,11 +658,13 @@
             // cmbbuscartipo
             // 
             this.cmbbuscartipo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cmbbuscartipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbbuscartipo.FormattingEnabled = true;
             this.cmbbuscartipo.Location = new System.Drawing.Point(138, 211);
             this.cmbbuscartipo.Name = "cmbbuscartipo";
             this.cmbbuscartipo.Size = new System.Drawing.Size(256, 23);
             this.cmbbuscartipo.TabIndex = 28;
+            this.cmbbuscartipo.SelectedIndexChanged += new System.EventHandler(this.cmbbuscartipo_SelectedIndexChanged);
             // 
             // txbbuscardui
             // 
@@ -745,13 +788,43 @@
             // dtgvmostrarusuarios
             // 
             this.dtgvmostrarusuarios.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtgvmostrarusuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvmostrarusuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvmostrarusuarios.Location = new System.Drawing.Point(6, 50);
             this.dtgvmostrarusuarios.Name = "dtgvmostrarusuarios";
+            this.dtgvmostrarusuarios.RowHeadersVisible = false;
             this.dtgvmostrarusuarios.RowHeadersWidth = 51;
+            this.dtgvmostrarusuarios.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.dtgvmostrarusuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvmostrarusuarios.Size = new System.Drawing.Size(778, 285);
             this.dtgvmostrarusuarios.TabIndex = 0;
+            // 
+            // lbltipoDoc
+            // 
+            this.lbltipoDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbltipoDoc.AutoSize = true;
+            this.lbltipoDoc.Location = new System.Drawing.Point(13, 245);
+            this.lbltipoDoc.Name = "lbltipoDoc";
+            this.lbltipoDoc.Size = new System.Drawing.Size(105, 15);
+            this.lbltipoDoc.TabIndex = 43;
+            this.lbltipoDoc.Text = "Tipo de doctor";
+            this.lbltipoDoc.Visible = false;
+            // 
+            // cbEditTipoDoc
+            // 
+            this.cbEditTipoDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbEditTipoDoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEditTipoDoc.FormattingEnabled = true;
+            this.cbEditTipoDoc.Items.AddRange(new object[] {
+            "General",
+            "Pediatría",
+            "Neumología",
+            "Gastroenterología"});
+            this.cbEditTipoDoc.Location = new System.Drawing.Point(138, 242);
+            this.cbEditTipoDoc.Name = "cbEditTipoDoc";
+            this.cbEditTipoDoc.Size = new System.Drawing.Size(256, 23);
+            this.cbEditTipoDoc.TabIndex = 44;
+            this.cbEditTipoDoc.Visible = false;
             // 
             // Usuarios
             // 
@@ -846,5 +919,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txbcontraseñabuscar;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cbEspecialidad;
+        private System.Windows.Forms.Label lblEspecialiad;
+        private System.Windows.Forms.ComboBox cbEditTipoDoc;
+        private System.Windows.Forms.Label lbltipoDoc;
     }
 }

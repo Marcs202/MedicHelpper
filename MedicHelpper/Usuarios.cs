@@ -1,12 +1,9 @@
 ﻿using MedicHelpper.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -37,6 +34,8 @@ namespace MedicHelpper
                 conectar.conexion.Close();
             }
             IniciarGrid();
+            cmbtipousuarioreg.SelectedIndex = 0;
+            
         }
         private void Limpiar()
         {
@@ -117,9 +116,35 @@ namespace MedicHelpper
                 MessageBox.Show("Solo se admiten datos numéricos", "validación de números", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
+        private void cmbbuscartipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbbuscartipo.SelectedIndex == 2)
+            {
+                lbltipoDoc.Visible = true;
+                cbEditTipoDoc.Visible = true;
+                cbEditTipoDoc.SelectedIndex = 0;
+            }
+            else
+            {
+                lbltipoDoc.Visible = false;
+                cbEditTipoDoc.Visible = false;
+                cbEditTipoDoc.SelectedIndex = 0;
+            }
+        }
         private void cmbtipousuarioreg_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            if (cmbtipousuarioreg.SelectedIndex==2)
+            {
+                lblEspecialiad.Visible = true;
+                cbEspecialidad.Visible = true;
+                cbEspecialidad.SelectedIndex = 0;
+            }
+            else
+            {
+                lblEspecialiad.Visible = false;
+                cbEspecialidad.Visible = false;
+                cbEspecialidad.SelectedIndex = 0;
+            }
         }
         private void btnlimpiarusuario_Click(object sender, EventArgs e)
         {
@@ -147,63 +172,84 @@ namespace MedicHelpper
         {
             //try
             //{
-                string DUI = txbduiusuarioreg.Text;
-                string nombre= txbnombreusuarioreg.Text, apellido = txbapellidousurioreg.Text;
-                if (DUI.Length == 9)
+            string DUI = txbduiusuarioreg.Text;
+            string nombre= txbnombreusuarioreg.Text, apellido = txbapellidousurioreg.Text;
+            if (DUI.Length == 9)
+            {
+                if(nombre.Length >= 4 && apellido.Length >= 4)
                 {
-                    if(nombre.Length >= 4 && apellido.Length >= 4)
+                    if(cmbtipousuarioreg.SelectedIndex > -1)
                     {
-                        if(cmbtipousuarioreg.SelectedIndex > -1)
+                        //REGISTRAMOS USUARIOS
+                        int año = dtpfechanacreg.Value.Year;
+                        int mes = dtpfechanacreg.Value.Month;
+                        int dia = dtpfechanacreg.Value.Day;
+                        string codigoGenerado = generarCodigoUsuario(txbnombreusuarioreg.Text, txbapellidousurioreg.Text, dia,año);
+                        int tipousuario=-1;
+                        int tipoMedico = -1;
+                        if (cmbtipousuarioreg.Text == "Administrador")
                         {
-                            //REGISTRAMOS USUARIOS
-                            int año = dtpfechanacreg.Value.Year;
-                            int mes = dtpfechanacreg.Value.Month;
-                            int dia = dtpfechanacreg.Value.Day;
-                            string codigoGenerado = generarCodigoUsuario(txbnombreusuarioreg.Text, txbapellidousurioreg.Text, dia,año);
-                            int tipousuario=-1;
-                            if (cmbtipousuarioreg.Text == "Administrador")
-                            {
-                                tipousuario = 0;
-                            }
-                            else if (cmbtipousuarioreg.Text == "Enfermeria")
-                            {
-                                tipousuario = 1;
-                            }
-                            else if (cmbtipousuarioreg.Text == "Dotores")
-                            {
-                                tipousuario = 2;
-                            }
-                            else if (cmbtipousuarioreg.Text == "Farmaceutico")
-                            {
-                                tipousuario = 2;
-                            }
-                            string nuevafecha = Convert.ToString(dia) + "-" + Convert.ToString(mes) +"-" +Convert.ToString(año);
-                            string cadenaInsertar = "INSERT INTO Usuarios VALUES ('" + codigoGenerado + "','" + txbcontraseñareg.Text +"','" + nombre + "','"+apellido +"','"+ dia+"-"+mes+"-"+año+ "','" + DUI + "','" + tipousuario + "');";
-                            conectar.conexion.Open();
-                            SqlCommand inserto = new SqlCommand(cadenaInsertar, conectar.conexion);
-                            inserto.ExecuteNonQuery();
-                            conectar.conexion.Close();
-                            MessageBox.Show("Usuario insertado con éxito\nDatos ingresados:\nCodigo del usuario: " + codigoGenerado +
-                                "\nNombre: " + nombre + apellido + "\nFecha de nacimiento: " + dia + "-" + mes + "-" + año + "\nDUI: " + DUI + "\nTipo usuario: " + cmbtipousuarioreg.Text);
-                            Limpiar();
-                        
-                        
+                            tipousuario = 0;
                         }
-                        else
+                        else if (cmbtipousuarioreg.Text == "Enfermeria")
                         {
-                            MessageBox.Show("ALERTA: Seleccione el tipo usuario.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            tipousuario = 1;
                         }
+                        else if (cmbtipousuarioreg.Text == "Doctores")
+                        {
+                            tipousuario = 2;
+                            if (cbEspecialidad.SelectedIndex == 0)
+                            {
+                                tipoMedico = cbEspecialidad.SelectedIndex + 1;//el codigo de medico 1 será de medico general
+                            }
+                            else if (cbEspecialidad.SelectedIndex == 1)
+                            {
+                                tipoMedico = cbEspecialidad.SelectedIndex + 1;//el codigo de medico 2  será de medico pediatra 
+                            }
+                            else if (cbEspecialidad.SelectedIndex == 2)
+                            {
+                                tipoMedico = cbEspecialidad.SelectedIndex + 1;//el codigo de medico 3 será de medico neumologo
+                            }
+                            else if (cbEspecialidad.SelectedIndex == 3)
+                            {
+                                tipoMedico = cbEspecialidad.SelectedIndex;//el codigo de medico 4 será de medico gastroenterologo
+                            }
 
+                        }
+                        else if (cmbtipousuarioreg.Text == "Farmaceutico")
+                        {
+                            tipousuario = 2;
+                        }
+                        
+                        string nuevafecha = Convert.ToString(dia) + "-" + Convert.ToString(mes) +"-" +Convert.ToString(año);
+                        string cadenaInsertar = "INSERT INTO Usuarios VALUES ('" + codigoGenerado + "','" + txbcontraseñareg.Text + "','" + nombre + "','" + apellido + "','" + año + "-" + mes + "-" + dia + "','" + DUI + "','" + tipousuario + "','" + tipoMedico + "');";
+                        
+                            
+                        conectar.conexion.Open();
+                        SqlCommand inserto = new SqlCommand(cadenaInsertar, conectar.conexion);
+                        inserto.ExecuteNonQuery();
+                        conectar.conexion.Close();
+                        MessageBox.Show("Usuario insertado con éxito\nDatos ingresados:\nCodigo del usuario: " + codigoGenerado +
+                            "\nNombre: " + nombre + apellido + "\nFecha de nacimiento: " + dia + "-" + mes + "-" + año + "\nDUI: " + DUI + "\nTipo usuario: " + cmbtipousuarioreg.Text);
+                        Limpiar();
+                        
+                        
                     }
                     else
                     {
-                        MessageBox.Show("ALERTA: Revise nombre y apellido ingresado.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("ALERTA: Seleccione el tipo usuario.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
+
                 }
                 else
                 {
-                    MessageBox.Show("ALERTA: DUI debe tener 9 caracteres.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("ALERTA: Revise nombre y apellido ingresado.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+            }
+            else
+            {
+                MessageBox.Show("ALERTA: DUI debe tener 9 caracteres.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             //}
             //catch
             //{
@@ -304,31 +350,36 @@ namespace MedicHelpper
             //try
             //{
 
-                string DUI = txbbuscardui.Text;
-                string nombre = txbbuscarnombre.Text, apellido = txbbuscarapellido.Text;
-                if (DUI.Length == 9)
+            string DUI = txbbuscardui.Text;
+            string nombre = txbbuscarnombre.Text, apellido = txbbuscarapellido.Text;
+            int tipoMedico = -1;
+            if (DUI.Length == 9)
+            {
+                if (cmbbuscartipo.SelectedIndex==2)
                 {
+                    tipoMedico = cbEditTipoDoc.SelectedIndex + 1;
+                }
 
-                    if (nombre.Length >= 4 && apellido.Length >= 4)
-                    {
-                        
-                        string comandoActualizarDatos = "UPDATE Usuarios SET Contraseña = '" + txbbuscarid.Text + "', Nombre = '" + txbbuscarnombre.Text + "', Apellido = '" + txbbuscarapellido.Text + "', FechaDeNacimiento = '" + dtpbuscarfecha.Value + "', DUI = '" + txbbuscardui.Text + "', IdTipoUsuarioUsusarios = '" + cmbbuscartipo.SelectedIndex + "' WHERE IdUsuario = '" + txbbuscarid.Text + "'";
-                        conectar.conexion.Open();
-                        SqlCommand comandoActualizar = new SqlCommand(comandoActualizarDatos, conectar.conexion);
-                        comandoActualizar.ExecuteNonQuery();
-                        conectar.conexion.Close();
-                        Limpiar();
-                        IniciarGrid();
-                    }
-                    else
-                    {
-                        MessageBox.Show("ALERTA: Revise nombre y apellido ingresado.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
+                if (nombre.Length >= 4 && apellido.Length >= 4)
+                {
+                    string comandoActualizarDatos = "UPDATE Usuarios SET Contraseña = '" + txbbuscarid.Text + "', Nombre = '" + txbbuscarnombre.Text + "', Apellido = '" + txbbuscarapellido.Text + "', FechaDeNacimiento = '" + dtpbuscarfecha.Value + "', DUI = '" + txbbuscardui.Text + "', IdTipoUsuarioUsusarios = '" + 
+                        cmbbuscartipo.SelectedIndex + "', TipoMedico = '" + tipoMedico +"' WHERE IdUsuario = '" + txbbuscarid.Text + "'";
+                    conectar.conexion.Open();
+                    SqlCommand comandoActualizar = new SqlCommand(comandoActualizarDatos, conectar.conexion);
+                    comandoActualizar.ExecuteNonQuery();
+                    conectar.conexion.Close();
+                    Limpiar();
+                    IniciarGrid();
                 }
                 else
                 {
-                    MessageBox.Show("ALERTA: DUI debe tener 9 caracteres.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("ALERTA: Revise nombre y apellido ingresado.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+            }
+            else
+            {
+                MessageBox.Show("ALERTA: DUI debe tener 9 caracteres.", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             //}
             //catch
             //{
@@ -465,6 +516,12 @@ namespace MedicHelpper
             }
         }
 
+        private void txbcontraseñareg_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
         //------------------------------------------------------------
 }

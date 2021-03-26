@@ -17,7 +17,15 @@ namespace MedicHelpper
         {
             InitializeComponent();
         }
-
+        public Farmaceuticos(int cod)
+        {
+            InitializeComponent();
+            if ( cod==1)
+            {
+                pctAtras.Visible = false;
+                pctAtras.Enabled = false;
+            }
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
