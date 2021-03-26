@@ -25,13 +25,17 @@ DUI CHAR(9) NOT NULL UNIQUE,
 IdTipoUsuarioUsusarios INT FOREIGN KEY REFERENCES TipoUsuario(IdTipoUsuario) ON DELETE CASCADE ON UPDATE CASCADE
 )
 go
-ALTER table Usuarios
-add TipoMedico int 
-GO
+
 INSERT INTO Usuarios VALUES ('AA0001','password','Admin','Admin','1-10-2020','123456789','0'),
 ('EE0001','password','Enfermeria','Enfermeria','1-10-2020','234567890','1'),
 ('DD0001','password','Doctores','Doctores','1-10-2020','345678901','2'),
 ('FF0001','password','Farmaceutico','Farmaceutico','1-10-2020','456789012','3');
+GO
+
+--Se  le añadio la columna TipoMedico a los usuarios
+Alter table usuarios
+add TipoMedico int
+go
 
 CREATE TABLE Pacientes(
 IdPaciente CHAR(6) PRIMARY KEY,
@@ -47,8 +51,15 @@ FechaCita DATETIME,
 Estado INT NOT NULL CONSTRAINT CK_EstadoCita CHECK ((Estado = 1) OR (Estado = 0))
 )
 GO
+
+--Se añadio el campo cita
 ALTER table Cita
 Especialidad int
+go
+
+--Se añadio el campo Prioridad
+Alter table Cita
+add Prioridad int 
 go
 
 
@@ -106,26 +117,4 @@ begin
        RAISERROR ('Duplicate Data', 16, 1);
 end
 GO
-
-
-
-add Especialidad int
-go
-Alter table Cita
-add Prioridad int 
-go
-
-
-select * from TipoUsuario
-select * from Usuarios
-select * from Pacientes
-select * from Cita
-Alter table Cita
-add Prioridad int 
-go
-select IdPacienteCita As [Tarjeta del Paciente], Nombre, Apellido, FechaCita
-From Cita cit
-Inner Join Pacientes pa
-ON pa.IdPaciente= cit.IdPacienteCita
-where Especialidad = 1
 
