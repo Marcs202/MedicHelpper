@@ -137,7 +137,7 @@ namespace MedicHelpper
             int mes = datmMedicamento.Value.Month;
             int dia = datmMedicamento.Value.Day;
             string fecha = dia.ToString() + "-" + mes.ToString() + "-" + año.ToString();
-            string sql= "insert into Medicamentos(Nombre,Cantidad,Descripcion,Ubicacion,FechaExpiracion)values('"+this.txtNOmbreMEdicamento.Text+"','"+this.txtCantidadMed.Text+"','"+this.txtDescripcionmed.Text+"','"+this.txtUbicacionMed.Text+"','"+fecha+"')";
+            string sql= "insert into Medicamentos(Nombre,Cantidad,Descripcion,Ubicacion,Lotes,FechaExpiracion)values('"+this.txtNOmbreMEdicamento.Text+"','"+this.txtCantidadMed.Text+"','"+this.txtDescripcionmed.Text+"','"+this.txtUbicacionMed.Text+"','"+this.txtLote.Text + "','"+fecha+"')";
             if (obDatos.AñadirMedicamentos(sql)) { MessageBox.Show("Registro Insertado"); } else { MessageBox.Show("Error al insertar"); }
 
         }

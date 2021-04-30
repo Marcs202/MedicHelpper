@@ -54,7 +54,7 @@ GO
 
 --Se añadio el campo cita
 ALTER table Cita
-Especialidad int
+add Especialidad int
 go
 
 --Se añadio el campo Prioridad
@@ -72,6 +72,11 @@ Ubicacion VARCHAR(100) NOT NULL,
 Cantidad INT
 )
 GO
+--Añadir Lote
+Alter table Medicamentos
+add Lotes VARCHAR(15) 
+go
+
 CREATE TABLE Consulta(
 IdConsulta INT IDENTITY(0,1) PRIMARY KEY,
 CodReceta INT UNIQUE,

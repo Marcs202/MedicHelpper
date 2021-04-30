@@ -77,6 +77,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgv_Despacho = new System.Windows.Forms.DataGridView();
+            this.txtLote = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctAtras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
@@ -185,10 +187,10 @@
             this.tabFarmaceutico.Controls.Add(this.addMedicamentos);
             this.tabFarmaceutico.Controls.Add(this.tabPage3);
             this.tabFarmaceutico.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabFarmaceutico.Location = new System.Drawing.Point(12, 48);
+            this.tabFarmaceutico.Location = new System.Drawing.Point(11, 57);
             this.tabFarmaceutico.Name = "tabFarmaceutico";
             this.tabFarmaceutico.SelectedIndex = 0;
-            this.tabFarmaceutico.Size = new System.Drawing.Size(657, 412);
+            this.tabFarmaceutico.Size = new System.Drawing.Size(657, 363);
             this.tabFarmaceutico.TabIndex = 2;
             // 
             // tabPage1
@@ -201,7 +203,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(649, 381);
+            this.tabPage1.Size = new System.Drawing.Size(649, 332);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Consulta de Receta";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -229,12 +231,12 @@
             this.dtgv_buscaRecta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_buscaRecta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_buscaRecta.GridColor = System.Drawing.Color.Silver;
-            this.dtgv_buscaRecta.Location = new System.Drawing.Point(11, 69);
+            this.dtgv_buscaRecta.Location = new System.Drawing.Point(18, 91);
             this.dtgv_buscaRecta.MultiSelect = false;
             this.dtgv_buscaRecta.Name = "dtgv_buscaRecta";
             this.dtgv_buscaRecta.RowHeadersVisible = false;
             this.dtgv_buscaRecta.RowHeadersWidth = 51;
-            this.dtgv_buscaRecta.Size = new System.Drawing.Size(627, 220);
+            this.dtgv_buscaRecta.Size = new System.Drawing.Size(615, 220);
             this.dtgv_buscaRecta.TabIndex = 3;
             // 
             // txtIdReceta
@@ -265,7 +267,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(649, 381);
+            this.tabPage2.Size = new System.Drawing.Size(649, 332);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Busqueda Medicamento";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -293,12 +295,12 @@
             this.dtgv_BusquedaMEd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_BusquedaMEd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_BusquedaMEd.EnableHeadersVisualStyles = false;
-            this.dtgv_BusquedaMEd.Location = new System.Drawing.Point(3, 73);
+            this.dtgv_BusquedaMEd.Location = new System.Drawing.Point(16, 92);
             this.dtgv_BusquedaMEd.Name = "dtgv_BusquedaMEd";
             this.dtgv_BusquedaMEd.ReadOnly = true;
             this.dtgv_BusquedaMEd.RowHeadersVisible = false;
             this.dtgv_BusquedaMEd.RowHeadersWidth = 51;
-            this.dtgv_BusquedaMEd.Size = new System.Drawing.Size(644, 144);
+            this.dtgv_BusquedaMEd.Size = new System.Drawing.Size(617, 221);
             this.dtgv_BusquedaMEd.TabIndex = 3;
             // 
             // txtBuscaMed
@@ -328,7 +330,7 @@
             this.addMedicamentos.Margin = new System.Windows.Forms.Padding(2);
             this.addMedicamentos.Name = "addMedicamentos";
             this.addMedicamentos.Padding = new System.Windows.Forms.Padding(2);
-            this.addMedicamentos.Size = new System.Drawing.Size(649, 381);
+            this.addMedicamentos.Size = new System.Drawing.Size(649, 332);
             this.addMedicamentos.TabIndex = 2;
             this.addMedicamentos.Text = "Añadir medicamentos";
             this.addMedicamentos.UseVisualStyleBackColor = true;
@@ -339,17 +341,19 @@
             this.dtgVAnadirMedicamento.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgVAnadirMedicamento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgVAnadirMedicamento.EnableHeadersVisualStyles = false;
-            this.dtgVAnadirMedicamento.Location = new System.Drawing.Point(5, 217);
+            this.dtgVAnadirMedicamento.Location = new System.Drawing.Point(16, 193);
             this.dtgVAnadirMedicamento.Name = "dtgVAnadirMedicamento";
             this.dtgVAnadirMedicamento.ReadOnly = true;
             this.dtgVAnadirMedicamento.RowHeadersVisible = false;
             this.dtgVAnadirMedicamento.RowHeadersWidth = 51;
-            this.dtgVAnadirMedicamento.Size = new System.Drawing.Size(639, 144);
+            this.dtgVAnadirMedicamento.Size = new System.Drawing.Size(622, 134);
             this.dtgVAnadirMedicamento.TabIndex = 4;
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.txtLote);
             this.groupBox1.Controls.Add(this.btnMostMedicamento);
             this.groupBox1.Controls.Add(this.btningresarusuario);
             this.groupBox1.Controls.Add(this.datmMedicamento);
@@ -377,7 +381,7 @@
             this.btnMostMedicamento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
             this.btnMostMedicamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMostMedicamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.btnMostMedicamento.Location = new System.Drawing.Point(306, 164);
+            this.btnMostMedicamento.Location = new System.Drawing.Point(289, 153);
             this.btnMostMedicamento.Name = "btnMostMedicamento";
             this.btnMostMedicamento.Size = new System.Drawing.Size(187, 29);
             this.btnMostMedicamento.TabIndex = 16;
@@ -391,7 +395,7 @@
             this.btningresarusuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
             this.btningresarusuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btningresarusuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.btningresarusuario.Location = new System.Drawing.Point(178, 164);
+            this.btningresarusuario.Location = new System.Drawing.Point(159, 153);
             this.btningresarusuario.Name = "btningresarusuario";
             this.btningresarusuario.Size = new System.Drawing.Size(75, 29);
             this.btningresarusuario.TabIndex = 15;
@@ -402,7 +406,7 @@
             // datmMedicamento
             // 
             this.datmMedicamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.datmMedicamento.Location = new System.Drawing.Point(396, 124);
+            this.datmMedicamento.Location = new System.Drawing.Point(394, 114);
             this.datmMedicamento.Name = "datmMedicamento";
             this.datmMedicamento.Size = new System.Drawing.Size(200, 23);
             this.datmMedicamento.TabIndex = 14;
@@ -410,7 +414,7 @@
             // txtUbicacionMed
             // 
             this.txtUbicacionMed.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtUbicacionMed.Location = new System.Drawing.Point(232, 124);
+            this.txtUbicacionMed.Location = new System.Drawing.Point(243, 114);
             this.txtUbicacionMed.Name = "txtUbicacionMed";
             this.txtUbicacionMed.Size = new System.Drawing.Size(117, 23);
             this.txtUbicacionMed.TabIndex = 11;
@@ -419,7 +423,7 @@
             // txtDescripcionmed
             // 
             this.txtDescripcionmed.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDescripcionmed.Location = new System.Drawing.Point(10, 122);
+            this.txtDescripcionmed.Location = new System.Drawing.Point(65, 114);
             this.txtDescripcionmed.Name = "txtDescripcionmed";
             this.txtDescripcionmed.Size = new System.Drawing.Size(122, 23);
             this.txtDescripcionmed.TabIndex = 10;
@@ -428,7 +432,7 @@
             // txtCantidadMed
             // 
             this.txtCantidadMed.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCantidadMed.Location = new System.Drawing.Point(360, 58);
+            this.txtCantidadMed.Location = new System.Drawing.Point(245, 54);
             this.txtCantidadMed.Name = "txtCantidadMed";
             this.txtCantidadMed.Size = new System.Drawing.Size(115, 23);
             this.txtCantidadMed.TabIndex = 9;
@@ -437,7 +441,7 @@
             // txtNOmbreMEdicamento
             // 
             this.txtNOmbreMEdicamento.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNOmbreMEdicamento.Location = new System.Drawing.Point(178, 58);
+            this.txtNOmbreMEdicamento.Location = new System.Drawing.Point(70, 54);
             this.txtNOmbreMEdicamento.Name = "txtNOmbreMEdicamento";
             this.txtNOmbreMEdicamento.Size = new System.Drawing.Size(117, 23);
             this.txtNOmbreMEdicamento.TabIndex = 8;
@@ -446,7 +450,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCodigo.Location = new System.Drawing.Point(10, 58);
+            this.txtCodigo.Location = new System.Drawing.Point(9, 158);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(119, 23);
             this.txtCodigo.TabIndex = 7;
@@ -458,7 +462,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(429, 104);
+            this.label9.Location = new System.Drawing.Point(440, 96);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(119, 15);
             this.label9.TabIndex = 6;
@@ -469,7 +473,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(257, 105);
+            this.label8.Location = new System.Drawing.Point(278, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(62, 15);
             this.label8.TabIndex = 5;
@@ -480,7 +484,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 104);
+            this.label7.Location = new System.Drawing.Point(85, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 15);
             this.label7.TabIndex = 4;
@@ -491,7 +495,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(393, 40);
+            this.label6.Location = new System.Drawing.Point(278, 36);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 15);
             this.label6.TabIndex = 3;
@@ -502,7 +506,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(7, 40);
+            this.label5.Location = new System.Drawing.Point(6, 140);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(125, 15);
             this.label5.TabIndex = 2;
@@ -514,7 +518,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(210, 40);
+            this.label4.Location = new System.Drawing.Point(96, 36);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 1;
@@ -537,7 +541,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(649, 381);
+            this.tabPage3.Size = new System.Drawing.Size(649, 332);
             this.tabPage3.TabIndex = 3;
             this.tabPage3.Text = "Despacho Medicina";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -550,9 +554,9 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.dtgv_Despacho);
-            this.groupBox2.Location = new System.Drawing.Point(6, 3);
+            this.groupBox2.Location = new System.Drawing.Point(9, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(637, 375);
+            this.groupBox2.Size = new System.Drawing.Size(637, 320);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Despacho";
@@ -607,19 +611,38 @@
             // 
             this.dtgv_Despacho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_Despacho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Despacho.Location = new System.Drawing.Point(19, 96);
+            this.dtgv_Despacho.Location = new System.Drawing.Point(19, 75);
             this.dtgv_Despacho.Name = "dtgv_Despacho";
             this.dtgv_Despacho.ReadOnly = true;
             this.dtgv_Despacho.RowHeadersVisible = false;
-            this.dtgv_Despacho.Size = new System.Drawing.Size(597, 273);
+            this.dtgv_Despacho.Size = new System.Drawing.Size(597, 233);
             this.dtgv_Despacho.TabIndex = 0;
+            // 
+            // txtLote
+            // 
+            this.txtLote.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLote.Location = new System.Drawing.Point(428, 54);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(115, 23);
+            this.txtLote.TabIndex = 17;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(468, 36);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 15);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Lote";
             // 
             // Farmaceuticos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(681, 459);
+            this.ClientSize = new System.Drawing.Size(681, 438);
             this.Controls.Add(this.pctAtras);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnRestaurar);
@@ -706,5 +729,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dtgv_Despacho;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtLote;
     }
 }

@@ -73,6 +73,7 @@
             this.errorDescripcion = new System.Windows.Forms.ErrorProvider(this.components);
             this.cbEspecilidadCita = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.AddCita.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -93,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorCodigoCons)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodUSuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -101,9 +103,9 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(1, 47);
+            this.tabControl1.Location = new System.Drawing.Point(11, 48);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
-            this.tabControl1.Size = new System.Drawing.Size(644, 377);
+            this.tabControl1.Size = new System.Drawing.Size(634, 325);
             this.tabControl1.Controls.SetChildIndex(this.tabPage2, 0);
             this.tabControl1.Controls.SetChildIndex(this.tabPage3, 0);
             this.tabControl1.Controls.SetChildIndex(this.tabPage1, 0);
@@ -112,49 +114,50 @@
             // dtpCita
             // 
             this.dtpCita.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpCita.Location = new System.Drawing.Point(247, 61);
+            this.dtpCita.Location = new System.Drawing.Point(237, 57);
             this.dtpCita.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged_1);
             // 
             // txtTarjeta
             // 
             this.txtTarjeta.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTarjeta.Location = new System.Drawing.Point(247, 105);
+            this.txtTarjeta.Location = new System.Drawing.Point(237, 101);
             this.txtTarjeta.Margin = new System.Windows.Forms.Padding(2);
             this.txtTarjeta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // btnAddCita
             // 
             this.btnAddCita.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnAddCita.Location = new System.Drawing.Point(409, 180);
+            this.btnAddCita.Location = new System.Drawing.Point(452, 212);
             this.btnAddCita.Click += new System.EventHandler(this.btnAddCita_Click);
             // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.Location = new System.Drawing.Point(108, 105);
+            this.label5.Location = new System.Drawing.Point(98, 101);
             // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.Location = new System.Drawing.Point(109, 64);
+            this.label7.Location = new System.Drawing.Point(99, 60);
             // 
             // lblEstado
             // 
             this.lblEstado.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblEstado.Location = new System.Drawing.Point(184, 252);
+            this.lblEstado.Location = new System.Drawing.Point(174, 248);
             // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.Location = new System.Drawing.Point(109, 252);
+            this.label6.Location = new System.Drawing.Point(99, 248);
             // 
             // AddCita
             // 
+            this.AddCita.Controls.Add(this.pictureBox2);
             this.AddCita.Controls.Add(this.cbEspecilidadCita);
             this.AddCita.Controls.Add(this.label15);
             this.AddCita.Margin = new System.Windows.Forms.Padding(2);
             this.AddCita.Padding = new System.Windows.Forms.Padding(2);
-            this.AddCita.Size = new System.Drawing.Size(636, 348);
+            this.AddCita.Size = new System.Drawing.Size(626, 296);
             this.AddCita.Text = "Agregar cita";
             this.AddCita.Controls.SetChildIndex(this.btnAddCita, 0);
             this.AddCita.Controls.SetChildIndex(this.txtTarjeta, 0);
@@ -167,6 +170,7 @@
             this.AddCita.Controls.SetChildIndex(this.txtCita, 0);
             this.AddCita.Controls.SetChildIndex(this.label15, 0);
             this.AddCita.Controls.SetChildIndex(this.cbEspecilidadCita, 0);
+            this.AddCita.Controls.SetChildIndex(this.pictureBox2, 0);
             // 
             // btnCerrar
             // 
@@ -177,11 +181,11 @@
             // 
             // label8
             // 
-            this.label8.Location = new System.Drawing.Point(109, 195);
+            this.label8.Location = new System.Drawing.Point(99, 191);
             // 
             // txtCita
             // 
-            this.txtCita.Location = new System.Drawing.Point(247, 195);
+            this.txtCita.Location = new System.Drawing.Point(237, 191);
             this.txtCita.ReadOnly = true;
             this.txtCita.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
@@ -202,44 +206,44 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(636, 348);
+            this.tabPage1.Size = new System.Drawing.Size(626, 296);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Busqueda de Cita";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(416, 94);
+            this.pictureBox1.Location = new System.Drawing.Point(421, 88);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(119, 132);
+            this.pictureBox1.Size = new System.Drawing.Size(114, 128);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 33;
             this.pictureBox1.TabStop = false;
             // 
             // Lbl_text
             // 
-            this.Lbl_text.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.Lbl_text.AutoSize = true;
+            this.Lbl_text.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Lbl_text.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_text.Location = new System.Drawing.Point(17, 44);
+            this.Lbl_text.Location = new System.Drawing.Point(4, 24);
             this.Lbl_text.Name = "Lbl_text";
-            this.Lbl_text.Size = new System.Drawing.Size(360, 26);
+            this.Lbl_text.Size = new System.Drawing.Size(269, 22);
             this.Lbl_text.TabIndex = 32;
             this.Lbl_text.Text = "Busqueda de citas programadas";
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnBuscar.BackColor = System.Drawing.Color.LightGreen;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscar.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(420, 241);
+            this.btnBuscar.Location = new System.Drawing.Point(421, 235);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(108, 27);
+            this.btnBuscar.Size = new System.Drawing.Size(114, 35);
             this.btnBuscar.TabIndex = 31;
             this.btnBuscar.Text = "Consultar";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -248,10 +252,10 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(62, 231);
+            this.label4.Location = new System.Drawing.Point(78, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 17);
             this.label4.TabIndex = 30;
@@ -260,21 +264,21 @@
             // 
             // txt_cita
             // 
-            this.txt_cita.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_cita.Location = new System.Drawing.Point(260, 231);
+            this.txt_cita.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_cita.Location = new System.Drawing.Point(276, 225);
             this.txt_cita.Name = "txt_cita";
             this.txt_cita.ReadOnly = true;
-            this.txt_cita.Size = new System.Drawing.Size(100, 20);
+            this.txt_cita.Size = new System.Drawing.Size(9, 20);
             this.txt_cita.TabIndex = 29;
             this.txt_cita.Visible = false;
             this.txt_cita.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cita_KeyPress);
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(62, 80);
+            this.label1.Location = new System.Drawing.Point(78, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(192, 17);
             this.label1.TabIndex = 26;
@@ -282,10 +286,10 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 181);
+            this.label3.Location = new System.Drawing.Point(78, 175);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 17);
             this.label3.TabIndex = 28;
@@ -294,8 +298,8 @@
             // 
             // txt_codPaci
             // 
-            this.txt_codPaci.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_codPaci.Location = new System.Drawing.Point(260, 130);
+            this.txt_codPaci.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_codPaci.Location = new System.Drawing.Point(276, 124);
             this.txt_codPaci.Name = "txt_codPaci";
             this.txt_codPaci.ReadOnly = true;
             this.txt_codPaci.Size = new System.Drawing.Size(100, 20);
@@ -305,8 +309,8 @@
             // 
             // txt_CODCITa
             // 
-            this.txt_CODCITa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_CODCITa.Location = new System.Drawing.Point(260, 80);
+            this.txt_CODCITa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_CODCITa.Location = new System.Drawing.Point(276, 74);
             this.txt_CODCITa.Name = "txt_CODCITa";
             this.txt_CODCITa.Size = new System.Drawing.Size(100, 20);
             this.txt_CODCITa.TabIndex = 23;
@@ -314,8 +318,8 @@
             // 
             // txt_fecha
             // 
-            this.txt_fecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_fecha.Location = new System.Drawing.Point(260, 181);
+            this.txt_fecha.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_fecha.Location = new System.Drawing.Point(276, 175);
             this.txt_fecha.Name = "txt_fecha";
             this.txt_fecha.ReadOnly = true;
             this.txt_fecha.Size = new System.Drawing.Size(100, 20);
@@ -325,10 +329,10 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(62, 130);
+            this.label2.Location = new System.Drawing.Point(78, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(160, 17);
             this.label2.TabIndex = 27;
@@ -342,7 +346,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(636, 348);
+            this.tabPage2.Size = new System.Drawing.Size(626, 296);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Citas pendientes";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -350,12 +354,13 @@
             // btn_MostrarData
             // 
             this.btn_MostrarData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_MostrarData.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btn_MostrarData.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btn_MostrarData.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btn_MostrarData.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_MostrarData.Image = ((System.Drawing.Image)(resources.GetObject("btn_MostrarData.Image")));
             this.btn_MostrarData.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_MostrarData.Location = new System.Drawing.Point(499, 303);
+            this.btn_MostrarData.Location = new System.Drawing.Point(505, 262);
             this.btn_MostrarData.Name = "btn_MostrarData";
             this.btn_MostrarData.Size = new System.Drawing.Size(103, 24);
             this.btn_MostrarData.TabIndex = 4;
@@ -366,15 +371,14 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 3);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 294);
+            this.dataGridView1.Size = new System.Drawing.Size(596, 232);
             this.dataGridView1.TabIndex = 3;
             // 
             // tabPage3
@@ -385,15 +389,13 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(636, 348);
+            this.tabPage3.Size = new System.Drawing.Size(626, 296);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Diagnostico";
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.btn_guardar_diagnostico);
             this.groupBox1.Controls.Add(this.txt_DescripcionDoc);
             this.groupBox1.Controls.Add(this.label13);
@@ -405,10 +407,11 @@
             this.groupBox1.Controls.Add(this.txt_fecha_doc);
             this.groupBox1.Controls.Add(this.txt_codusuario);
             this.groupBox1.Controls.Add(this.txt_codigocita);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(22, 39);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(611, 306);
+            this.groupBox1.Size = new System.Drawing.Size(626, 296);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Ingrese datos de diagnostico";
@@ -420,7 +423,7 @@
             this.btn_guardar_diagnostico.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_guardar_diagnostico.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar_diagnostico.Image")));
             this.btn_guardar_diagnostico.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_guardar_diagnostico.Location = new System.Drawing.Point(495, 220);
+            this.btn_guardar_diagnostico.Location = new System.Drawing.Point(109, 243);
             this.btn_guardar_diagnostico.Name = "btn_guardar_diagnostico";
             this.btn_guardar_diagnostico.Size = new System.Drawing.Size(99, 35);
             this.btn_guardar_diagnostico.TabIndex = 22;
@@ -432,10 +435,10 @@
             // txt_DescripcionDoc
             // 
             this.txt_DescripcionDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_DescripcionDoc.Location = new System.Drawing.Point(57, 179);
+            this.txt_DescripcionDoc.Location = new System.Drawing.Point(255, 136);
             this.txt_DescripcionDoc.Multiline = true;
             this.txt_DescripcionDoc.Name = "txt_DescripcionDoc";
-            this.txt_DescripcionDoc.Size = new System.Drawing.Size(358, 102);
+            this.txt_DescripcionDoc.Size = new System.Drawing.Size(358, 122);
             this.txt_DescripcionDoc.TabIndex = 10;
             this.txt_DescripcionDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_DescripcionDoc_KeyPress);
             // 
@@ -444,7 +447,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(80, 100);
+            this.label13.Location = new System.Drawing.Point(89, 104);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(144, 17);
             this.label13.TabIndex = 5;
@@ -455,7 +458,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(101, 145);
+            this.label11.Location = new System.Drawing.Point(33, 155);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(200, 17);
             this.label11.TabIndex = 9;
@@ -466,7 +469,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(359, 103);
+            this.label10.Location = new System.Drawing.Point(394, 61);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 17);
             this.label10.TabIndex = 8;
@@ -477,7 +480,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(85, 63);
+            this.label9.Location = new System.Drawing.Point(89, 67);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(128, 17);
             this.label9.TabIndex = 7;
@@ -488,7 +491,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(85, 32);
+            this.label12.Location = new System.Drawing.Point(89, 36);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(144, 17);
             this.label12.TabIndex = 6;
@@ -497,7 +500,7 @@
             // txt_RecetDoc
             // 
             this.txt_RecetDoc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_RecetDoc.Location = new System.Drawing.Point(246, 97);
+            this.txt_RecetDoc.Location = new System.Drawing.Point(255, 101);
             this.txt_RecetDoc.Name = "txt_RecetDoc";
             this.txt_RecetDoc.Size = new System.Drawing.Size(100, 23);
             this.txt_RecetDoc.TabIndex = 1;
@@ -506,7 +509,7 @@
             // txt_fecha_doc
             // 
             this.txt_fecha_doc.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_fecha_doc.Location = new System.Drawing.Point(420, 100);
+            this.txt_fecha_doc.Location = new System.Drawing.Point(456, 61);
             this.txt_fecha_doc.Name = "txt_fecha_doc";
             this.txt_fecha_doc.Size = new System.Drawing.Size(100, 23);
             this.txt_fecha_doc.TabIndex = 4;
@@ -515,7 +518,7 @@
             // txt_codusuario
             // 
             this.txt_codusuario.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_codusuario.Location = new System.Drawing.Point(246, 29);
+            this.txt_codusuario.Location = new System.Drawing.Point(255, 33);
             this.txt_codusuario.Name = "txt_codusuario";
             this.txt_codusuario.Size = new System.Drawing.Size(100, 23);
             this.txt_codusuario.TabIndex = 2;
@@ -524,7 +527,7 @@
             // txt_codigocita
             // 
             this.txt_codigocita.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_codigocita.Location = new System.Drawing.Point(246, 60);
+            this.txt_codigocita.Location = new System.Drawing.Point(255, 64);
             this.txt_codigocita.Name = "txt_codigocita";
             this.txt_codigocita.Size = new System.Drawing.Size(100, 23);
             this.txt_codigocita.TabIndex = 3;
@@ -535,7 +538,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(29, 10);
+            this.label14.Location = new System.Drawing.Point(-395, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(372, 26);
             this.label14.TabIndex = 20;
@@ -624,7 +627,7 @@
             "Pediatría",
             "Neumología",
             "Gastroenterología"});
-            this.cbEspecilidadCita.Location = new System.Drawing.Point(247, 150);
+            this.cbEspecilidadCita.Location = new System.Drawing.Point(237, 146);
             this.cbEspecilidadCita.Name = "cbEspecilidadCita";
             this.cbEspecilidadCita.Size = new System.Drawing.Size(121, 21);
             this.cbEspecilidadCita.TabIndex = 40;
@@ -633,16 +636,26 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(116, 150);
+            this.label15.Location = new System.Drawing.Point(106, 146);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 16);
             this.label15.TabIndex = 39;
             this.label15.Text = "Especialidad";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MedicHelpper.Properties.Resources.medico;
+            this.pictureBox2.Location = new System.Drawing.Point(456, 71);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(124, 110);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 41;
+            this.pictureBox2.TabStop = false;
+            // 
             // frmDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(656, 435);
+            this.ClientSize = new System.Drawing.Size(656, 384);
             this.Controls.Add(this.pctAtras);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnRestaurar);
@@ -678,6 +691,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorCodigoCons)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodUSuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorDescripcion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -727,5 +741,6 @@
         private System.Windows.Forms.ErrorProvider errorDescripcion;
         private System.Windows.Forms.ComboBox cbEspecilidadCita;
         protected System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
