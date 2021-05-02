@@ -61,8 +61,6 @@ namespace MedicHelpper
                 AgDoc.Close();
                 
             }
-            
-
         }
         public void BuscarCita(string sql, string tabla)
         {

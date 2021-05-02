@@ -83,7 +83,8 @@ namespace MedicHelpper
                 int estado = 1;
                 int dia = DateTime.Today.Day;
                 int esp = especialidad.SelectedIndex + 1;
-                string fecha = DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() + " " + DateTime.Today.Hour.ToString() + ":" + DateTime.Today.Minute.ToString();
+                string fecha = DateTime.Today.Day.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Year.ToString() 
+                    + " " + DateTime.Today.Hour.ToString() + ":" + DateTime.Today.Minute.ToString();
                 string insertar;
                 insertar = "INSERT INTO Cita (IdPacienteCita,FechaCita,Estado,Especialidad,Prioridad)";
                 insertar += "VALUES (@idPaciente,@fecha,@estado,@especialidad,@prioridad)";

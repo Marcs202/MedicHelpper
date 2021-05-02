@@ -108,9 +108,9 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label6.Location = new System.Drawing.Point(526, 158);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(286, 36);
+            this.label6.Size = new System.Drawing.Size(270, 18);
             this.label6.TabIndex = 4;
-            this.label6.Text = "Programación Orientada a Objetos\r\nModelamiento y Diseño de Base de Datos";
+            this.label6.Text = "Programacion con estructuras de datos";
             // 
             // label5
             // 

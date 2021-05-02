@@ -21,16 +21,6 @@ namespace MedicHelpper
             Paciente elem = new Paciente();
             elementos[0] = elem;
         }
-        public void Transversa()
-        {
-            int n = 0;
-
-            for (n = 0; n <= tamano; n++)
-            {
-                MessageBox.Show("Nombre " + elementos[n].Nombre + " Prioridad " + elementos[n].Prioridad);
-            }
-
-        }
         public bool EstaLleno()
         {
             if (tamano >= capacidad)
@@ -76,7 +66,6 @@ namespace MedicHelpper
             }
             elementoMenor = elementos[1];
             ultimoElemento = elementos[tamano--];
-
             for (n.Prioridad = 1; n.Prioridad * 2 <= tamano; n.Prioridad = hijo.Prioridad)
             {
                 //encontramos al menor
@@ -98,7 +87,6 @@ namespace MedicHelpper
                 }
             }
             elementos[n.Prioridad] = ultimoElemento;
-            
             return elementoMenor;
         }
     }

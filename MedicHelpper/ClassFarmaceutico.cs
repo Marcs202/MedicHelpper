@@ -16,7 +16,7 @@ namespace MedicHelpper
         private string cadena = "server=localhost;database=MedicHelpperBDD;integrated security = True";
         //LAPTOP-B09UIF2D\\MSSQLSERVERDEV
         public SqlConnection far;
-        private SqlCommandBuilder cmb;
+        
         public DataSet ds = new DataSet();
         public SqlDataAdapter da;
         public SqlCommand comando;
