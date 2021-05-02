@@ -16,7 +16,7 @@ namespace MedicHelpper
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Farmaceuticos Primera = new Farmaceuticos();
+            Bienvenida Primera = new Bienvenida();
             if (Primera.ShowDialog() == DialogResult.OK)
             {
                 //Application.Run(new MenuAdministrador("Admin"));
