@@ -104,17 +104,26 @@ namespace MedicHelpper
                 MessageBox.Show("Cita añadida al sistema exitosamente", "Insercion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-                if (ex.ToString() == "Duplicate Data")
-                {
+                if (ex.Number == 50000 && ex.State==1 && ex.Class==16)
+                { 
                     MessageBox.Show("Cita no ingresado,este paciente ya tiene una cita para el mismo momento ", "Reintentar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (ex.Number == 547 && ex.State == 0 && ex.Class == 16)
+                {
+                    MessageBox.Show("Cita no ingresada, vuelva a intentar ingresar con los formatos correctos EJ P00001", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    MessageBox.Show("Cita no ingresada,Vuelva a intentar ingresar con los formatos correctos"+ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error no esperado, por favor reintente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
 
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Cita no ingresada,Vuelva a intentar ingresar con los formatos correctos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {

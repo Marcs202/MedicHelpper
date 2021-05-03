@@ -52,7 +52,7 @@ namespace MedicHelpper
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error en la conexion a la base de datos"+ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error en la conexion a la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 AgDoc.Close();
                 return false;
             }
@@ -99,6 +99,7 @@ namespace MedicHelpper
             }
             catch (Exception ex)
             {
+                MessageBox.Show("No se encontro la cita en la base de datos, error en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -165,7 +166,7 @@ namespace MedicHelpper
             {
                 cn.cerrar();
                 MessageBox.Show("No se puede conectar a la base de datos");
-                throw;
+                
             }
             finally { cn.cerrar(); }
 

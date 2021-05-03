@@ -218,6 +218,11 @@ namespace MedicHelpper
             ApellidoAdd = ValidarCampoLetras(txt_cita, e, errorCita);
         }
 
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txt_ConsultaDoc_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorCodUSuario.SetError(txt_codusuario, "");
