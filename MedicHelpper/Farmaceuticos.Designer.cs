@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Farmaceuticos));
-            this.pctAtras = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.PictureBox();
-            this.btnRestaurar = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.errorFechaMedicamento = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorCodigoMed = new System.Windows.Forms.ErrorProvider(this.components);
@@ -42,18 +39,18 @@
             this.errorUbicacion = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabFarmaceutico = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.dtgv_buscaRecta = new System.Windows.Forms.DataGridView();
             this.txtIdReceta = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.dtgv_BusquedaMEd = new System.Windows.Forms.DataGridView();
             this.txtBuscaMed = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addMedicamentos = new System.Windows.Forms.TabPage();
             this.dtgVAnadirMedicamento = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtLote = new System.Windows.Forms.TextBox();
             this.btnMostMedicamento = new System.Windows.Forms.Button();
             this.btningresarusuario = new System.Windows.Forms.Button();
             this.datmMedicamento = new System.Windows.Forms.DateTimePicker();
@@ -77,11 +74,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.dtgv_Despacho = new System.Windows.Forms.DataGridView();
-            this.txtLote = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pctAtras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
+            this.pctAtras = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnRestaurar = new System.Windows.Forms.PictureBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorFechaMedicamento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodigoMed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).BeginInit();
@@ -99,45 +97,10 @@
             this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Despacho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctAtras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pctAtras
-            // 
-            this.pctAtras.Image = global::MedicHelpper.Properties.Resources.Atras;
-            this.pctAtras.Location = new System.Drawing.Point(11, 11);
-            this.pctAtras.Margin = new System.Windows.Forms.Padding(2);
-            this.pctAtras.Name = "pctAtras";
-            this.pctAtras.Size = new System.Drawing.Size(38, 31);
-            this.pctAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctAtras.TabIndex = 16;
-            this.pctAtras.TabStop = false;
-            this.pctAtras.Click += new System.EventHandler(this.pctAtras_Click_1);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Image = global::MedicHelpper.Properties.Resources.minimizar2;
-            this.btnMinimizar.Location = new System.Drawing.Point(548, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(40, 28);
-            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnMinimizar.TabIndex = 12;
-            this.btnMinimizar.TabStop = false;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // btnRestaurar
-            // 
-            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurar.Image = global::MedicHelpper.Properties.Resources.redimensionar;
-            this.btnRestaurar.Location = new System.Drawing.Point(592, 11);
-            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(37, 28);
-            this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnRestaurar.TabIndex = 11;
-            this.btnRestaurar.TabStop = false;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click_1);
             // 
             // btnCerrar
             // 
@@ -208,23 +171,6 @@
             this.tabPage1.Text = "Consulta de Receta";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnBuscar.BackColor = System.Drawing.Color.LightGreen;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Image = global::MedicHelpper.Properties.Resources.headhunter;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(358, 29);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(95, 27);
-            this.btnBuscar.TabIndex = 32;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
             // dtgv_buscaRecta
             // 
             this.dtgv_buscaRecta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -271,23 +217,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Busqueda Medicamento";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.BackColor = System.Drawing.Color.LightGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::MedicHelpper.Properties.Resources.headhunter;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(352, 32);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 27);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Buscar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dtgv_BusquedaMEd
             // 
@@ -374,6 +303,25 @@
             this.groupBox1.Size = new System.Drawing.Size(634, 208);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(468, 36);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(31, 15);
+            this.label12.TabIndex = 18;
+            this.label12.Text = "Lote";
+            // 
+            // txtLote
+            // 
+            this.txtLote.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtLote.Location = new System.Drawing.Point(428, 54);
+            this.txtLote.Name = "txtLote";
+            this.txtLote.Size = new System.Drawing.Size(115, 23);
+            this.txtLote.TabIndex = 17;
             // 
             // btnMostMedicamento
             // 
@@ -548,6 +496,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnReporte);
             this.groupBox2.Controls.Add(this.btnActualizarMed);
             this.groupBox2.Controls.Add(this.txtCantMed);
             this.groupBox2.Controls.Add(this.txtCodMedicamento);
@@ -567,7 +516,7 @@
             this.btnActualizarMed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(59)))), ((int)(((byte)(68)))));
             this.btnActualizarMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarMed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(243)))), ((int)(((byte)(248)))));
-            this.btnActualizarMed.Location = new System.Drawing.Point(502, 40);
+            this.btnActualizarMed.Location = new System.Drawing.Point(500, 22);
             this.btnActualizarMed.Name = "btnActualizarMed";
             this.btnActualizarMed.Size = new System.Drawing.Size(105, 29);
             this.btnActualizarMed.TabIndex = 16;
@@ -577,14 +526,14 @@
             // 
             // txtCantMed
             // 
-            this.txtCantMed.Location = new System.Drawing.Point(373, 44);
+            this.txtCantMed.Location = new System.Drawing.Point(371, 26);
             this.txtCantMed.Name = "txtCantMed";
             this.txtCantMed.Size = new System.Drawing.Size(100, 23);
             this.txtCantMed.TabIndex = 4;
             // 
             // txtCodMedicamento
             // 
-            this.txtCodMedicamento.Location = new System.Drawing.Point(155, 41);
+            this.txtCodMedicamento.Location = new System.Drawing.Point(153, 23);
             this.txtCodMedicamento.Name = "txtCodMedicamento";
             this.txtCodMedicamento.Size = new System.Drawing.Size(100, 23);
             this.txtCodMedicamento.TabIndex = 3;
@@ -592,7 +541,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(292, 47);
+            this.label11.Location = new System.Drawing.Point(290, 29);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(63, 15);
             this.label11.TabIndex = 2;
@@ -601,7 +550,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(16, 44);
+            this.label10.Location = new System.Drawing.Point(14, 26);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(133, 15);
             this.label10.TabIndex = 1;
@@ -611,31 +560,98 @@
             // 
             this.dtgv_Despacho.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_Despacho.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Despacho.Location = new System.Drawing.Point(19, 75);
+            this.dtgv_Despacho.Location = new System.Drawing.Point(17, 58);
             this.dtgv_Despacho.Name = "dtgv_Despacho";
             this.dtgv_Despacho.ReadOnly = true;
             this.dtgv_Despacho.RowHeadersVisible = false;
-            this.dtgv_Despacho.Size = new System.Drawing.Size(597, 233);
+            this.dtgv_Despacho.Size = new System.Drawing.Size(614, 212);
             this.dtgv_Despacho.TabIndex = 0;
             // 
-            // txtLote
+            // pctAtras
             // 
-            this.txtLote.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtLote.Location = new System.Drawing.Point(428, 54);
-            this.txtLote.Name = "txtLote";
-            this.txtLote.Size = new System.Drawing.Size(115, 23);
-            this.txtLote.TabIndex = 17;
+            this.pctAtras.Image = global::MedicHelpper.Properties.Resources.Atras;
+            this.pctAtras.Location = new System.Drawing.Point(11, 11);
+            this.pctAtras.Margin = new System.Windows.Forms.Padding(2);
+            this.pctAtras.Name = "pctAtras";
+            this.pctAtras.Size = new System.Drawing.Size(38, 31);
+            this.pctAtras.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctAtras.TabIndex = 16;
+            this.pctAtras.TabStop = false;
+            this.pctAtras.Click += new System.EventHandler(this.pctAtras_Click_1);
             // 
-            // label12
+            // btnMinimizar
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(468, 36);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 15);
-            this.label12.TabIndex = 18;
-            this.label12.Text = "Lote";
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Image = global::MedicHelpper.Properties.Resources.minimizar2;
+            this.btnMinimizar.Location = new System.Drawing.Point(548, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(40, 28);
+            this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMinimizar.TabIndex = 12;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // btnRestaurar
+            // 
+            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRestaurar.Image = global::MedicHelpper.Properties.Resources.redimensionar;
+            this.btnRestaurar.Location = new System.Drawing.Point(592, 11);
+            this.btnRestaurar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRestaurar.Name = "btnRestaurar";
+            this.btnRestaurar.Size = new System.Drawing.Size(37, 28);
+            this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRestaurar.TabIndex = 11;
+            this.btnRestaurar.TabStop = false;
+            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click_1);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBuscar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Image = global::MedicHelpper.Properties.Resources.headhunter;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(358, 29);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(95, 27);
+            this.btnBuscar.TabIndex = 32;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.BackColor = System.Drawing.Color.LightGreen;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Georgia", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::MedicHelpper.Properties.Resources.headhunter;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(352, 32);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(95, 27);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Buscar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
+            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte.Location = new System.Drawing.Point(488, 276);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(143, 38);
+            this.btnReporte.TabIndex = 17;
+            this.btnReporte.Text = "Generar Reporte";
+            this.btnReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReporte.UseVisualStyleBackColor = true;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // Farmaceuticos
             // 
@@ -653,9 +669,6 @@
             this.Name = "Farmaceuticos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmaceuticos";
-            ((System.ComponentModel.ISupportInitialize)(this.pctAtras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorFechaMedicamento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCodigoMed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorNombre)).EndInit();
@@ -677,6 +690,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Despacho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctAtras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -731,5 +747,6 @@
         private System.Windows.Forms.DataGridView dtgv_Despacho;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtLote;
+        private System.Windows.Forms.Button btnReporte;
     }
 }

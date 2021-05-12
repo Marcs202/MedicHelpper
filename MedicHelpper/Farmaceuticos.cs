@@ -142,6 +142,14 @@ namespace MedicHelpper
 
         }
 
+        private void btnReporte_Click(object sender, EventArgs e)
+        {            
+            Reporte reporte = new Reporte();            
+            reporte.Show();            
+
+
+        }
+
         private void btnMostMedicamento_Click(object sender, EventArgs e)
         {
             dtgVAnadirMedicamento.DataSource = obDatos.MostrarMedicamento();
