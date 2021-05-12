@@ -218,6 +218,11 @@ namespace MedicHelpper
             ApellidoAdd = ValidarCampoLetras(txt_cita, e, errorCita);
         }
 
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void txt_ConsultaDoc_KeyPress(object sender, KeyPressEventArgs e)
         {
             errorCodUSuario.SetError(txt_codusuario, "");
@@ -233,7 +238,8 @@ namespace MedicHelpper
         }
         private void btn_guardar_diagnostico_Click(object sender, EventArgs e)
         {
-            string sql = "Insert into Consulta (IdUsuarioConsulta,idCita,Descripcion,CodReceta,Fecha) values ('" + txt_codusuario.Text+ "','" +txt_codigocita.Text+ "','" +txt_DescripcionDoc.Text+ "','"+ txt_RecetDoc.Text + "','" + txt_fecha_doc.Text+ "')";
+            string sql = "Insert into Consulta (IdUsuarioConsulta,idCita,Descripcion,CodReceta,Fecha) values ('" + txt_codusuario.Text+ "','" 
+                +txt_codigocita.Text+ "','" +txt_DescripcionDoc.Text+ "','"+ txt_RecetDoc.Text + "','" + txt_fecha_doc.Text+ "')";
             
             if (ObDatos.AgregarCita(sql)) { 
                 MessageBox.Show("Datos insertados correctamente");

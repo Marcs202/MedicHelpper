@@ -18,7 +18,10 @@ namespace MedicHelpper
         public frmEnfer()
         {
             InitializeComponent();
-            tipAgregar.SetToolTip(txtnum, "Ingrese el numero de tarjeta del paciente con el sigiente formato: P00001");            
+            tipAgregar.SetToolTip(txtnum, "Ingrese el numero de tarjeta del paciente con el sigiente formato: P00001");
+            cbEspecialidadEmergencia.SelectedIndex = 1 ;
+            cbPrioridad.SelectedIndex = 1;
+            cbEspecilidadCita.SelectedIndex = 1;
         }
         public frmEnfer(int cod)
         {
@@ -28,6 +31,9 @@ namespace MedicHelpper
                 tipAgregar.SetToolTip(txtnum, "Ingrese el numero de tarjeta del paciente con el sigiente formato: P00001");
                 pctAtras.Visible = false;
                 pctAtras.Enabled = false;
+                cbEspecialidadEmergencia.SelectedIndex = 1;
+                cbPrioridad.SelectedIndex = 1;
+                cbEspecilidadCita.SelectedIndex = 1;
             }
         }
         //Procedimiento para minimizar la pantalla
