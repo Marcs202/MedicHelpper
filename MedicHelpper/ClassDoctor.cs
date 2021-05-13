@@ -99,7 +99,7 @@ namespace MedicHelpper
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se encontro la cita en la base de datos, error en la base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Cita encontrada.", "Cita", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
