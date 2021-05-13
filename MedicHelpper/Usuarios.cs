@@ -15,6 +15,7 @@ namespace MedicHelpper
         List<ClassUsuarios> TodosLosUsuarios = new List<ClassUsuarios>();
         List<ClassUsuarios> ResultadosBusquedaUsuarios = new List<ClassUsuarios>();
         private int indice = -1;
+        
         public Usuarios()
         {
             InitializeComponent();
