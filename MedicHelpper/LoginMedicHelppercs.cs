@@ -16,16 +16,10 @@ namespace MedicHelpper
     {
         ConexionSqlServer conectarbdd = new ConexionSqlServer();
         public LoginMedicHelppercs()
-        {
+        { 
             InitializeComponent();
         }
-        private void LoginMedicHelppercs_Load(object sender, EventArgs e)
-        {
-        }
-        private void txbContraseña_TextChanged(object sender, EventArgs e)
-        {
 
-        }
         private void Limpiar()
         {
             txbUsuario.Text = "Usuario:";

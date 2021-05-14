@@ -147,8 +147,7 @@
             this.txbContraseña.Name = "txbContraseña";
             this.txbContraseña.Size = new System.Drawing.Size(344, 25);
             this.txbContraseña.TabIndex = 5;
-            this.txbContraseña.Text = "Contraseña:";
-            this.txbContraseña.TextChanged += new System.EventHandler(this.txbContraseña_TextChanged);
+            this.txbContraseña.Text = "Contraseña:";            
             this.txbContraseña.Enter += new System.EventHandler(this.txbContraseña_Enter);
             this.txbContraseña.Leave += new System.EventHandler(this.txbContraseña_Leave);
             // 
@@ -256,7 +255,6 @@
             this.Opacity = 0.98D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginMedicHelppercs";
-            this.Load += new System.EventHandler(this.LoginMedicHelppercs_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
